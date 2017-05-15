@@ -39,11 +39,20 @@ var losses = 0;
 var incorrectGuess = [];
 var guessAmount = 10;
 
+// setting up the game
 var toPlay = function() {
 	// computer will randomly choose word from pickCharacter
 	playWord = pickCharacter[Math.floor(Math.random() * pickCharacter.length)];
 	console.log(playWord);
 };
+
+/* playing the game:
+	set number of guesses remaining
+	randomly generate word from character list
+	display blank spaces in place of the each character for the chosen word
+
+
+*/
 
 
 // tested; function works so far.
