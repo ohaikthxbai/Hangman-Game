@@ -20,13 +20,15 @@
 	set number of guesses remaining											guessAmount = 10
 	randomly generate word from character list								math.random
 	display blank spaces in place of the each character for the chosen word (array with black spaces? underscores)
-	
+
 
 
 */
 
+// $(document).ready(function ()) {}
+
 // word array
-var pickCharacter = [
+var characters = [
 	"luigi",
 	"mario",
 	"dk",
@@ -42,22 +44,44 @@ var pickCharacter = [
 ];
 
 // variables
-
 var wins = 0;
 var losses = 0;
 var incorrectGuess = [];
-var guessAmount = 10;
+var guessAmount = 15;
 
 // setting up the game
 var toPlay = function() {
-	// computer will randomly choose word from pickCharacter
-	playWord = pickCharacter[Math.floor(Math.random() * pickCharacter.length)];
-	console.log(playWord);
+	// computer will randomly choose word from characters
+	// math.floor takes any number
+	playWord = characters[Math.floor(Math.random() * characters.length)];
+	// break secret word into an array of characters
+	splitWord = playWord.split('');
+	// count the number of spaces after each character
+	wordSpaces = splitWord.length;
+
+	//might be located in a different function
+	//check if keystroke equals a letter from splitWord
+	
+
+
+	//TESTING 
+	console.log(splitWord);
+	//console.log(wordSpaces);
+	console.log(wins);
+	console.log(losses);
+	console.log(guessAmount);
+	//console.log(incorrectGuess);
+	document.getElementById('winCount').innerHTML = wins;
+	document.getElementById('lossCount').innerHTML = losses;
+	document.getElementById('numGuesses').innerHTML = guessAmount;
+	document.getElementById('incGuesses').innerHTML = incorrectGuess;
 };
 
 // when the key is pressed by the player
 document.onkeyup = function(event) {
 	userText.textContent = event.key;
+
+
 };
 
 // tested; function works so far.
