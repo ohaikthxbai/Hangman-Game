@@ -55,8 +55,10 @@ var guessAmt = 10;
 // setting up the game
 var readyGO = function() {
     //ready game
+    userKeys = [];
     spaces = [];
     wrongGuess = [];
+    guessAmt = 10;
     // computer will randomly choose word from characters
     playWord = characters[Math.floor(Math.random() * characters.length)];
     // break secret word into an array of characters
@@ -116,15 +118,26 @@ var checkInput = function(letter) {
 
 // results of the player's win or loss
 var gameSet = function() {
+	// if the letters match the secret word array (each letter is an index in the array)
 	if (splitWord.join(" ") === spaces.join(" ")) {
+		//increase win count by one
 		wins++;
+		// display in html
 		document.getElementById('win-count').innerHTML = wins;
+		// display alert
 		alert("GAME SET!! Congratulations! You win!");
+		// replay
 		readyGO();
 	}
+	// if player runs out of guesses
 	else if (guessAmt === 0) {
+		// increase loss counter
+		losses++
+		// display in HTML
 		document.getElementById('num-guess').innerHTML = guessAmt;
+		// display an alert
 		alert("GAME OVER... Continue?")
+		// replay
 		readyGO();
 	}
 }
@@ -137,17 +150,19 @@ readyGO();
 document.onkeyup = function(event) {
     keystroke = event.key;
     if (userKeys.indexOf(keystroke) >= 0) {
-    	//meaning it already exists in the array
+    	// to prevent multiple inputs of the same key
     }
     else {
-    	//the keystroke is not in the array
-    	//userKeys.push(keystroke);
+    	// the keystroke is not in the array
+    	// add the key into the array
+    	userKeys.push(keystroke);
     	checkInput(keystroke);
     	gameSet();
     	//test
     	//console.log(userKeys);
-    	console.log(wrongGuess);
+    	//console.log(wrongGuess);
     }
+    
     
 
 
