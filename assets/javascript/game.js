@@ -25,10 +25,9 @@
 
 */
 
-// $(document).ready(function ()) {}
-
-// word array
-var characters = [
+// variables
+var characters = 
+[
 	"luigi",
 	"mario",
 	"dk",
@@ -43,14 +42,16 @@ var characters = [
 	"jigglypuff",
 ];
 
-// variables
 var wins = 0;
 var losses = 0;
 var incorrectGuess = [];
-var guessAmount = 15;
+var keystroke = "";
+var spaces = [];
+var guessAmount = 11;
 
 // setting up the game
-var toPlay = function() {
+var toPlay = function() 
+{
 	// computer will randomly choose word from characters
 	// math.floor takes any number
 	playWord = characters[Math.floor(Math.random() * characters.length)];
@@ -58,10 +59,14 @@ var toPlay = function() {
 	splitWord = playWord.split('');
 	// count the number of spaces after each character
 	wordSpaces = splitWord.length;
+	//replace secret word with underscores
+	for (i = 0; i < wordSpaces; i++) {
+		spaces.push("_");
+	}
 
 	//might be located in a different function
 	//check if keystroke equals a letter from splitWord
-	
+
 
 
 	//TESTING 
@@ -71,18 +76,21 @@ var toPlay = function() {
 	console.log(losses);
 	console.log(guessAmount);
 	//console.log(incorrectGuess);
-	document.getElementById('winCount').innerHTML = wins;
-	document.getElementById('lossCount').innerHTML = losses;
-	document.getElementById('numGuesses').innerHTML = guessAmount;
-	document.getElementById('incGuesses').innerHTML = incorrectGuess;
+	document.getElementById('win-count').innerHTML = wins;
+	document.getElementById('lose-count').innerHTML = losses;
+	document.getElementById('num-guess').innerHTML = guessAmount;
+	document.getElementById('wrong-guess').innerHTML = incorrectGuess;
+	document.getElementById('empty-space').innerHTML = spaces.join(" ");
 };
 
-// when the key is pressed by the player
-document.onkeyup = function(event) {
-	userText.textContent = event.key;
-
-
-};
 
 // tested; function works so far.
 toPlay();
+
+// when the key is pressed by the player
+document.onkeyup = function(event) {
+	var keystroke = event.key;
+	console.log(keystroke);
+
+
+};
