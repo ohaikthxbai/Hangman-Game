@@ -10,7 +10,6 @@ body {
 }
 
 .underscores {
-	text-transform: capitalize;
 	font-size: 40px;
 	margin: 30px 0px;
 	color: #9c000d;
@@ -22,6 +21,10 @@ body {
 	font-size: 30px;
 	padding-bottom: 30px;
 	border
+}
+
+.capslock {
+	text-transform: capitalize;
 }
 
 .counts {
