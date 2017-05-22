@@ -51,6 +51,8 @@ var userKeys = [];
 var keystroke = "";
 var spaces = [];
 var guessAmt = 10;
+var success = new Audio("assets/audio/ssb-challenger.mp3");
+var gameOver = new Audio("assets/audio/ssb-continue.mp3");
 
 // setting up the game
 var readyGO = function() {
@@ -121,24 +123,26 @@ var checkInput = function(letter) {
 var gameSet = function() {
     // joining the array elements into a string and checking for matching words
     if (splitWord.join(" ") === spaces.join(" ")) {
+        success.play();        
         //increase win count by one
         wins++;
         // display in html
         document.getElementById('win-count').innerHTML = wins;
-        // display alert
+        // display alert and play sound
         alert("GAME SET!! Congratulations! You win!");
         // replay
         readyGO();
     }
     // if player runs out of guesses
     else if (guessAmt === 0) {
+        gameOver.play();
         // increase loss counter
         losses++
         // display in HTML
         document.getElementById('num-guess').innerHTML = guessAmt;
-        // display an alert
+        // display an alert and play sound
         alert("GAME OVER... Continue?")
-            // replay
+        // replay
         readyGO();
     }
 }
