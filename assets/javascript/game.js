@@ -142,7 +142,7 @@ var gameSet = function() {
         document.getElementById('num-guess').innerHTML = guessAmt;
         // display an alert and play sound
         alert("GAME OVER... Continue?");
-            // replay
+        // replay
         readyGO();
     }
 }
