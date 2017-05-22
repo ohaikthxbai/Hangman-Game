@@ -80,11 +80,11 @@ var readyGO = function() {
     document.getElementById('empty-space').innerHTML = spaces.join(" ");
 
     //TESTING 
-    console.log(splitWord);
+    /* console.log(splitWord);
     console.log(spaceWord);
     console.log(wins);
     console.log(losses);
-    console.log(guessAmt);
+    console.log(guessAmt); */
 
 };
 
