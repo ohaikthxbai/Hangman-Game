@@ -6,10 +6,14 @@
     <title>SSB64 Hangman!</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- linkt to style sheet -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Might want to add jQuery link if I decide to use it-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- font stuff -->
+    <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
 </head>
 
 <body>
@@ -17,45 +21,47 @@
         <div class="container-fluid">
             <!-- Banner image -->
             <div class row="row">
-                <div class="col-md-12">
-                    <img class="banner-img" src="assets/images/banner.png" alt="ssb64">
+                <div class="col-md-12 text-center">
+                	<!-- not my banner; credit goes to some Etsy shop where I found it -->
+                    <img class="banner-img" src="assets/images/ssbtitle-alt.jpg" alt="ssb64">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <!-- Title of the game -->
                     <h1 class="text-center title-heading">Super Smash Bros. 64 Hangman</h1>
-                    <p class="text-center title-heading"><i>Choose your character!</i></p>
+                    <p class="text-center title-heading"><i>A new foe has appeared!</i></p>
                 </div>
             </div>
         </div>
         <!-- display playWord field -->
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-md-12">
                 <h2 class="text-center"><span id="empty-space"></span></h2>
             </div>
         </div>
         <!-- Display number of guesses remaining -->
         <div class="row">
-            <div class="col-sm-12" style="background-color: lavender; text-align: center">
+            <div class="col-sm-12 content">
                 <p>Guesses Remaining: <span id="num-guess"></span></p>
             </div>
         </div>
         <!-- Display incorrect guesses -->
-        <div class="col-sm-12" style="background-color: pink; text-align: center">
+        <div class="col-sm-12 content">
             <p>Incorrect Guesses: [ <span id="wrong-guess"></span> ]</p>
         </div>
         <!-- Display number of wins and losses -->
         <div class="row">
-            <div class="col-sm-6" style="background-color: grey; text-align: center">
+            <div class="col-sm-6 content">
                 <p>No. of wins: <span id="win-count"></span></p>
             </div>
-            <div class="col-sm-6" style="background-color: yellow; text-align: center">
+            <div class="col-sm-6 content">
                 <p>No. of losses: <span id="lose-count"></span></p>
             </div>
         </div>
         <!-- linking to javascript game -->
         <script src="assets/javascript/game.js"></script>
+    </div>
 </body>
 
 </html>

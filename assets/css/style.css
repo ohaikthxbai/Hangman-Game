@@ -1,0 +1,15 @@
+body {
+	background-color: black;
+	color: white;
+	font-family: 'Hammersmith One', sans-serif;
+}
+
+.banner-img {
+	max-width: 100%;
+
+}
+
+.content {
+	text-align: center;
+
+}
