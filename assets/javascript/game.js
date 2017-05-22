@@ -123,7 +123,7 @@ var checkInput = function(letter) {
 var gameSet = function() {
     // joining the array elements into a string and checking for matching words
     if (splitWord.join(" ") === spaces.join(" ")) {
-        success.play();        
+        success.play();
         //increase win count by one
         wins++;
         // display in html
@@ -141,8 +141,8 @@ var gameSet = function() {
         // display in HTML
         document.getElementById('num-guess').innerHTML = guessAmt;
         // display an alert and play sound
-        alert("GAME OVER... Continue?")
-        // replay
+        alert("GAME OVER... Continue?");
+            // replay
         readyGO();
     }
 }
@@ -157,7 +157,7 @@ document.onkeyup = function(event) {
     // check if the user input is in the userKeys array, do nothing (because it shouldn't be in there.. yet)
     if (userKeys.indexOf(keystroke) >= 0) {
         // to prevent multiple inputs of the same key
-    } 
+    }
     // since it's not in userKeys, add it to the array
     else {
         // the keystroke is not in the array
