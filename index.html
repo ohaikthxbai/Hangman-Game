@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- mobile responsiveness! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SSB64 Hangman!</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -42,21 +44,25 @@
         </div>
         <!-- Display number of guesses remaining -->
         <div class="row">
-            <div class="col-sm-12 content">
-                <p>Guesses Remaining: <span class="r.align counts" id="num-guess"></span></p>
+            <div class="col-md-12 content">
+                <p>Guesses Remaining:</p>
+                <span class="counts" id="num-guess"></span>
             </div>
         </div>
         <!-- Display incorrect guesses -->
-        <div class="col-sm-12 content">
-            <p>Incorrect Guesses: [ <span id="wrong-guess"></span> ]</p>
+        <div class="col-md-12 content">
+            <p>Incorrect Guesses:</p>
+            [ <span id="wrong-guess"></span> ]
         </div>
         <!-- Display number of wins and losses -->
         <div class="row">
-            <div class="col-sm-6 content">
-                <p>No. of wins: <span class="counts" id="win-count"></span></p>
+            <div class="col-md-6 content">
+                <p>Wins:</p>
+                <span class="counts" id="win-count"></span>
             </div>
-            <div class="col-sm-6 content">
-                <p>No. of losses: <span class="counts" id="lose-count"></span></p>
+            <div class="col-md-6 content">
+                <p>Losses:</p>
+                <span class="counts" id="lose-count"></span>
             </div>
         </div>
         <!-- linking to javascript game -->
